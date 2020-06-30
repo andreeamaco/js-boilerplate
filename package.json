@@ -7,18 +7,22 @@
     "verbose": true
   },
   "scripts": {
-    "start": "babel-node server/server.js",
-    "lint": "eslint ./client",
-    "lint:watch": "npm run lint -- --watch",
+    "start": "npm-run-all --parallel open:src start-mockapi",
     "open:src": "babel-node server/server.js",
+    "lint": "eslint client",
     "clean-dist": "rimraf ./dist && mkdir dist",
     "test": "jest",
     "prebuild": "npm-run-all clean-dist lint",
     "build": "babel-node server/build.js",
-    "postbuild": "babel-node server/distServer.js"
+    "postbuild": "babel-node server/distServer.js",
+    "generate-mock-data": "babel-node server/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch client/src/api/db.json --port 3001"
   },
   "dependencies": {
-    "eslint-plugin-jest": "^23.17.1"
+    "eslint-plugin-jest": "^23.17.1",
+    "json-schema-faker": "^0.3.6",
+    "json-server": "^0.8.22"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
