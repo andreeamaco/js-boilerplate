@@ -32,7 +32,7 @@ You’ll learn how to work like professional web devs and you’ll be well equip
 2. Node and npm for package management
     1. Install Node.js and npm
     2. Understand the package.json file
-3. [Transpiling your code](https://github.com/andreeamaco/js-boilerplate-tutorial/blob/main/chapter3-transpiling/transpiling-code.md)
+3. [Transpiling your code](https://github.com/andreeamaco/js-boilerplate/blob/master/chapters/chapter3-transpiling.md)
     1. What does it mean to transpile your code?
     2. Why do you need a transpiler?
     3. Install Babel for JS transpiling
